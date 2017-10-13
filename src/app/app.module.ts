@@ -11,6 +11,9 @@ import { BuyersService } from './services/buyers.service';
 import { Buyer } from './components/buyers/buyers';
 import { Product } from './components/products/products';
 
+import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 const appRoutes:Routes = [
  { path: 'buyers', component: BuyersComponent },
  { path: 'products', component: ProductsComponent }
@@ -24,6 +27,7 @@ const appRoutes:Routes = [
     ProductsComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     CommonModule,
     RouterModule.forRoot(

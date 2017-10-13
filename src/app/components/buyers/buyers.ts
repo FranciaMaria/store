@@ -1,4 +1,4 @@
-import { Product } from '../products/products';
+//import { Product } from '../products/products';
 
 
 export class Buyer {
@@ -11,9 +11,9 @@ export class Buyer {
 
   		email: string;
 
-      productsList: Product;
+      //productsList: Product;
 
-  		constructor(id:number, firstName:string, lastName:string, email: string, productsList: Product){
+  		constructor(id:number, firstName:string, lastName:string, email: string, []){
 
   		  this.id = id;
 
@@ -23,6 +23,6 @@ export class Buyer {
         
   			this.email = email;
 
-        this.productsList = productsList;
+        //this.productsList = productsList;
   		}
 }

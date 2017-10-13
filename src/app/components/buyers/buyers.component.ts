@@ -3,6 +3,12 @@ import { Buyer } from './buyers';
 import { Product } from '../products/products';
 import { BuyersService } from '../../services/buyers.service';
 
+/*import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { NgModule} from '@angular/core'; 
+import {BrowserModule} from '@angular/platform-browser';*/
+
+
 @Component({
   selector: 'app-buyers',
   templateUrl: './buyers.component.html',
@@ -13,6 +19,7 @@ export class BuyersComponent implements OnInit {
 
   //Buyer : any[];
   buyers: Array<Object>;
+  newBuyer: Buyer = new Buyer(0,'','', '', ['milk', 'eggs', 'choclate']);
 
   //productsList = [];
 
@@ -24,6 +31,23 @@ export class BuyersComponent implements OnInit {
   deleteBuyer(index){
 
     	this.buyers.splice(index, 1);
+  }
+
+
+   addBuyer() {
+
+  		
+
+    	this.buyers.push(this.newBuyer);
+
+    	/*this.productsList.push(this.product);
+
+    	this.product = new Product(0, '', 0);*/
+
+    	this.newBuyer = new Buyer(0,'','','', ['milk', 'eggs', 'choclate']);
+
+    	
+   	
   }
 
 
