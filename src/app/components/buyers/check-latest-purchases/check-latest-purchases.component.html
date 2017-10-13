@@ -27,32 +27,7 @@
       </div>
     </nav> 
 
-    <form>
-
-    	<label for="id">ID:</label>
-    	<input name="id" type="number" [(ngModel)]="newBuyer.id"/>
-  
-    	<label for="firstName">First Name:</label>
-    	<input name="firstName" type="text" [(ngModel)]="newBuyer.firstName"/>
-  
-    	<label for="lastName">Last Name:</label>
-    	<input name="lastName" type="text" [(ngModel)]="newBuyer.lastName"/>
-
-    	<label for="email">Email:</label>
-    	<input name="email" type="text" [(ngModel)]="newBuyer.email"/>
-
-    	<!-- <label for="sector-name">Sector name:</label>
-    	<input name="sector-name" type="text" [(ngModel)]="sector.name"/>
-
-    	<label for="surface">Surface:</label>
-    	<input name="surface" type="text" [(ngModel)]="sector.surface"/> -->
-
-    	<button (click)="addBuyer(newBuyer)">Add Buyer</button>
-
-    </form>
-
-
-    <table *ngFor = "let buyer of buyers; let i = index; ">
+    <table>
 
 		<tr>
 
@@ -80,12 +55,6 @@
 			<td>{{buyer.email}}</td>
 
 			<td >{{buyer.productsList}} </td>
-
-			<td><a routerLink="/buyers/{{buyer.id}}"><strong>Check latest purchases</strong></a></td>
-
-
-			<td (click)='deleteBuyer(i)'><strong>Remove</strong></td>
-
 
 		</tr>
 
