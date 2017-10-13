@@ -1,3 +1,72 @@
-<p>
-  buyers works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Store-app</title>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Store-app</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a routerLink="buyers" routerLinkActive="active">Buyers</a></li>
+          <li><a routerLink="products" routerLinkActive="active">Products</a></li>
+        </ul>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </nav> 
+
+
+    <table *ngFor = "let buyer of buyers; let i = index; ">
+
+		<tr>
+
+			<th>ID</th>
+
+			<th>First Name</th>
+
+			<th>Last Name</th>
+
+			<th>Email</th>
+
+			<th>Products list</th>
+
+		</tr>
+
+		<tr>
+
+			<td>{{buyer.id}}</td>
+
+			<td>{{buyer.firstName}}</td>
+
+			<td>{{buyer.lastName}}</td>
+
+
+			<td>{{buyer.email}}</td>
+
+			<td >{{buyer.productsList}} </td>
+
+
+			<td (click)='deleteBuyer(i)'><strong>Remove</strong></td>
+
+
+		</tr>
+
+	</table>
+
+	<!-- <router-outlet></router-outlet> -->
+
+
+  </body>
+</html>
