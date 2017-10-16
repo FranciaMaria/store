@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
+import { Product } from './products';
 
 @Component({
   selector: 'app-products',
@@ -15,7 +16,6 @@ export class ProductsComponent implements OnInit {
     this.products = productsService.getProducts();
   }
 
-
   ngOnInit() {
 
     this.productsService.getSearchTerm().subscribe(searchTerm => {
@@ -24,5 +24,16 @@ export class ProductsComponent implements OnInit {
     })
 
   }
+
+  public addQuantity(product) {
+    this.productsService.addQuantity(product);
+  }
+
+  public removeQuantity(product) {
+    this.productsService.removeQuantity(product);
+  }
+
+
+
 
 }

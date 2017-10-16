@@ -28,6 +28,14 @@
 
 			<td>{{product.quantityInStock}}</td>
 
+			<td><button (click)='addQuantity(product)'> + </button></td>
+
+     		<td><button *ngIf="product.quantityInStock >= 1" (click)='removeQuantity(product)'> - </button></td>
+
+     		<td><button *ngIf="product.quantityInStock == 0" class="btn btn-danger"> - </button></td>
+
+
+
 			<!-- <td><a routerLink="/products/{{product.id}}"><strong>Check latest purchases</strong></a></td> -->
 
 

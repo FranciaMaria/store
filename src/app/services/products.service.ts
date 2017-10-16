@@ -7,7 +7,6 @@ export class ProductsService {
 
   searchData = new BehaviorSubject('');
 
-  constructor() { }
 
   private products: Product[] = [
     {
@@ -42,11 +41,35 @@ export class ProductsService {
   	this.searchData.next(term);
   }
 
-
   getSearchTerm() {
 
   	return this.searchData;
 
   }
 
+   public addQuantity(product) {
+    let singleProduct = this.findProduct(product);
+    return singleProduct.quantityInStock ++;
+  }
+
+  public removeQuantity(product) {
+    let singleProduct = this.findProduct(product);
+    return singleProduct.quantityInStock --;
+  }
+
+  public findProduct(products){
+    return this.products.find((product) => {
+      return product['id'] === products.id;
+    })
+  }
+
+  public getProductById(id) {
+    return this.products.find(product => {
+       return product['id'] == id;
+    })
+  }
+
+
+
+  
 }
