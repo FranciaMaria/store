@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BuyersService } from '../../../services/buyers.service';
+import { Buyer } from '../buyers';
 
 @Component({
   selector: 'app-check-latest-purchases',
@@ -11,7 +12,8 @@ export class CheckLatestPurchasesComponent implements OnInit {
 
   id: number;
   //route: any;
-  buyer: Object;
+  //buyer: Object;
+  buyer: Buyer;
   buyers:Array<Object>
 
   constructor(private route: ActivatedRoute, private buyersService:BuyersService) {
@@ -29,6 +31,11 @@ export class CheckLatestPurchasesComponent implements OnInit {
        
        // In a real app: dispatch action to load the details here.
     });
+
+    let id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.buyer = this.buyersService.getBuyerById(id);
+
+
   }
 
   ngOnDestroy() {

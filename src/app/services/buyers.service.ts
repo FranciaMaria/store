@@ -27,20 +27,9 @@ export class BuyersService {
     this.products = productsService.getProducts();
   }
 
-  getBuyers(){
 
-  	return [
+  /*private buyers: Buyer[] = [
 
-  	/*new Buyer(1, 'Maja', 'Mikic', 'majamikic@gmail.com', this.products[1]),
-
-		new Buyer(2, 'Dejan', 'Rakic', 'dejanrakic@yahoo.com', this.products[2]),
-
-		new Buyer(3, 'Miodrag', "Savic", 'miodragsavic@live.com', this.products[3]),
-
-		new Buyer(4,'Jana', 'Janic', 'janajanic@yahoo.com', this.products[0]),
-
-		new Buyer(5, 'Petra', 'Pepic', 'petrapepic@gmail.com', this.products[1])
-*/
     {
       id: 1,
       firstName: "Nikola",  
@@ -87,9 +76,80 @@ export class BuyersService {
     }
 
 
-  	];
+]*/
 
+private buyers: Buyer[] = [
+    {
+      id: 1,
+      firstName: "Nikola",  
+      lastName: "Nikolic",
+      email: "nikolic@gmail.com",
+      products: [
+        { name : 'milk' },
+        { name : 'eggs' },
+        { name : 'sugar' }
+      ]
+    },
+    {
+      id: 2,
+      firstName: "Milan",
+      lastName: "Miovanovic",
+      email: "milovanovic@gmail.com",
+      products: [
+        { name : 'chocolate' },
+        { name : 'bread' },
+        { name : 'milk' }
+      ]
+    },
+    {
+      id: 3,
+      firstName: "Petar",
+      lastName: "Petrovic",
+      email: "petrovic@gmail.com",
+      products: [
+        { name : 'apples' },
+        { name : 'chips' },
+        { name : 'milk' }
+      ]
+    },
+    {
+      id: 4,
+      firstName: "Ivan",
+      lastName: "Ivanovic",
+      email: "ivanovic@gmail.com",
+      products: [
+        { name : 'honey' },
+        { name : 'bread' },
+        { name : 'juice' }
+      ]
+    }
+  ]
+
+
+  getBuyers(){
+    return this.buyers;
   }
+
+  public newBuyerId() {
+    return this.buyers.length + 1;
+  }
+
+  public getBuyerById(id) {
+    return this.buyers.find( buyer => {
+      return buyer['id'] == id;
+    })
+  }
+
+  public buyerPurchase(product, id){
+    let buyer = this.getBuyerById(id);
+    this.addProduct(buyer, product);   
+  }
+
+  public addProduct(buyer, product) {
+     buyer.products.push(product);
+     this.productsService.removeQuantity(product.quantity)
+  }
+
 
  
 

@@ -17,11 +17,13 @@ import { FormsModule } from '@angular/forms';
 import { CheckLatestPurchasesComponent } from './components/buyers/check-latest-purchases/check-latest-purchases.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProductDetailComponent } from './components/products/product-detail/product-detail.component';
 
 const appRoutes:Routes = [
  { path: 'buyers', component: BuyersComponent },
  { path: 'buyers/:id', component: CheckLatestPurchasesComponent },
  { path: 'products', component: ProductsComponent },
+ { path: 'products/:id', component: ProductDetailComponent },
  { path: '', redirectTo: '/', pathMatch: 'full' }
 ]
 
@@ -33,7 +35,8 @@ const appRoutes:Routes = [
     ProductsComponent,
     CheckLatestPurchasesComponent,
     SearchPipe,
-    NavbarComponent
+    NavbarComponent,
+    ProductDetailComponent
   ],
   imports: [
     FormsModule,

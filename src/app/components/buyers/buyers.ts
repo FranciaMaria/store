@@ -3,7 +3,7 @@ import { Product } from '../products/products';
 
 export class Buyer {
 
-  		id:number; 
+  		/*id:number; 
 
   		firstName:string; 
 
@@ -24,5 +24,14 @@ export class Buyer {
   			this.email = email;
 
         this.products = products;
-  		}
+  		}*/
+
+       constructor(
+    id?: number, 
+    firstName?: string, 
+    lastName?: string, 
+    email?: string,
+    products?: Product[]
+  ) { }
+
 }

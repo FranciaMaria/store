@@ -19,14 +19,14 @@ import {BrowserModule} from '@angular/platform-browser';*/
 export class BuyersComponent implements OnInit {
 
   //Buyer : any[];
-  products: Array<Object>;
+  product: Product[];
   buyers: Array<Object>;
-  product: Product = new Product(0, '', 0);
+  //product: Product = new Product(0, '', 0);
   newBuyer: Buyer = new Buyer(0,'','', '', this.product);
 
   constructor(private buyersService:BuyersService, private produtcsService:ProductsService) {
     this.buyers = buyersService.getBuyers();
-    this.products = produtcsService.getProducts();
+    //this.products = produtcsService.getProducts();
   }
 
   
@@ -41,9 +41,9 @@ export class BuyersComponent implements OnInit {
 
     	this.buyers.push(this.newBuyer);
 
-    	this.products.push(this.product);
+    	//this.products.push(this.product);
 
-    	this.product = new Product(0, '', 0);
+    	//this.product = new Product(0, '', 0);
 
     	this.newBuyer = new Buyer(0,'','','', this.product);
   }
