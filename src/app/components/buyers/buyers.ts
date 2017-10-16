@@ -11,7 +11,7 @@ export class Buyer {
 
   		email: string;
 
-      //productsList: Product;
+      productsList:Array<string>;
 
   		constructor(id:number, firstName:string, lastName:string, email: string, []){
 
@@ -23,6 +23,6 @@ export class Buyer {
         
   			this.email = email;
 
-        //this.productsList = productsList;
+        this.productsList = ['milk, sugar', 'eggs'];
   		}
 }

@@ -18,7 +18,8 @@ import { CheckLatestPurchasesComponent } from './components/buyers/check-latest-
 const appRoutes:Routes = [
  { path: 'buyers', component: BuyersComponent },
  { path: 'buyers/:id', component: CheckLatestPurchasesComponent },
- { path: 'products', component: ProductsComponent }
+ { path: 'products', component: ProductsComponent },
+ { path: '', redirectTo: '/', pathMatch: 'full' }
 ]
 
 @NgModule({
