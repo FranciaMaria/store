@@ -10,10 +10,7 @@ export class ProductsComponent implements OnInit {
 
   products: Array<Object>;
   searchTerm:string;
-  //newBuyer: Buyer = new Buyer(0,'','', '', ['milk', 'eggs', 'choclate']);
-
-  //productsList = [];
-
+  
   constructor(private productsService:ProductsService) {
     this.products = productsService.getProducts();
   }

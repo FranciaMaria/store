@@ -9,20 +9,32 @@ export class ProductsService {
 
   constructor() { }
 
+  private products: Product[] = [
+    {
+      id: 1,
+      name: "milk",
+      quantityInStock: 150,
+    },
+    {
+      id: 2,
+      name: "eggs",
+      quantityInStock: 220,
+    },
+    {
+      id: 3,
+      name: "bread",
+      quantityInStock: 50,
+    },
+    {
+      id: 4,
+      name: "chocolate",
+      quantityInStock: 100,
+    }
+  ];
+
+
   getProducts(){
-
-  	return [
-
-      		new Product (1, 'banana', 500),
-
-      		new Product (2, 'bread', 100),
-
-      		new Product (3, 'eggs', 1000),
-
-      		new Product (4, 'milk', 50)
-
-  	];
-
+    return this.products;
   }
 
   search(term){

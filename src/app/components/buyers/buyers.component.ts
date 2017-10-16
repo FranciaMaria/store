@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Buyer } from './buyers';
 import { Product } from '../products/products';
 import { BuyersService } from '../../services/buyers.service';
+import { ProductsService } from '../../services/products.service';
 
 /*import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -18,15 +19,17 @@ import {BrowserModule} from '@angular/platform-browser';*/
 export class BuyersComponent implements OnInit {
 
   //Buyer : any[];
+  products: Array<Object>;
   buyers: Array<Object>;
-  newBuyer: Buyer = new Buyer(0,'','', '', ['milk', 'eggs', 'choclate']);
+  product: Product = new Product(0, '', 0);
+  newBuyer: Buyer = new Buyer(0,'','', '', this.product);
 
-  //productsList = [];
-
-  constructor(private buyersService:BuyersService) {
+  constructor(private buyersService:BuyersService, private produtcsService:ProductsService) {
     this.buyers = buyersService.getBuyers();
+    this.products = produtcsService.getProducts();
   }
 
+  
 
   deleteBuyer(index){
 
@@ -36,18 +39,13 @@ export class BuyersComponent implements OnInit {
 
    addBuyer() {
 
-  		
-
     	this.buyers.push(this.newBuyer);
 
-    	/*this.productsList.push(this.product);
+    	this.products.push(this.product);
 
-    	this.product = new Product(0, '', 0);*/
+    	this.product = new Product(0, '', 0);
 
-    	this.newBuyer = new Buyer(0,'','','', ['milk', 'eggs', 'choclate']);
-
-    	
-   	
+    	this.newBuyer = new Buyer(0,'','','', this.product);
   }
 
 

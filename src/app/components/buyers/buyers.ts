@@ -1,4 +1,4 @@
-//import { Product } from '../products/products';
+import { Product } from '../products/products';
 
 
 export class Buyer {
@@ -11,9 +11,9 @@ export class Buyer {
 
   		email: string;
 
-      productsList:Array<string>;
+      products: Product;
 
-  		constructor(id:number, firstName:string, lastName:string, email: string, []){
+  		constructor(id:number, firstName:string, lastName:string, email: string, products: Product){
 
   		  this.id = id;
 
@@ -23,6 +23,6 @@ export class Buyer {
         
   			this.email = email;
 
-        this.productsList = ['milk, sugar', 'eggs'];
+        this.products = products;
   		}
 }

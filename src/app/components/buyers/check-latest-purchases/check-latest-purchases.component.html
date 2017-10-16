@@ -54,7 +54,7 @@
 
 			<td>{{buyer.email}}</td>
 
-			<td >{{buyer.productsList}} </td>
+			<td *ngFor = "let product of buyer.products; let i = index; ">{{product.name}} </td>
 
 		</tr>
 
