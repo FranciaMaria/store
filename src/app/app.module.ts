@@ -15,6 +15,8 @@ import { ProductsService } from './services/products.service';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { CheckLatestPurchasesComponent } from './components/buyers/check-latest-purchases/check-latest-purchases.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const appRoutes:Routes = [
  { path: 'buyers', component: BuyersComponent },
@@ -29,7 +31,9 @@ const appRoutes:Routes = [
     LayoutComponent,
     BuyersComponent,
     ProductsComponent,
-    CheckLatestPurchasesComponent
+    CheckLatestPurchasesComponent,
+    SearchPipe,
+    NavbarComponent
   ],
   imports: [
     FormsModule,

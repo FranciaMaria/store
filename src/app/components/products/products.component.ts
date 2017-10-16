@@ -9,6 +9,7 @@ import { ProductsService } from '../../services/products.service';
 export class ProductsComponent implements OnInit {
 
   products: Array<Object>;
+  searchTerm:string;
   //newBuyer: Buyer = new Buyer(0,'','', '', ['milk', 'eggs', 'choclate']);
 
   //productsList = [];
@@ -19,6 +20,12 @@ export class ProductsComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.productsService.getSearchTerm().subscribe(searchTerm => {
+      //console.log(searchTerm);
+      this.searchTerm = searchTerm;
+    })
+
   }
 
 }
