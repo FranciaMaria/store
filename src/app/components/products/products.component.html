@@ -1,3 +1,45 @@
-<p>
-  products works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Store-app</title>
+
+  </head>
+
+  <body>
+
+  	<table *ngFor = "let product of products; let i = index; ">
+
+		<tr>
+
+			<th>ID</th>
+
+			<th>Name</th>
+
+			<th>Quantity in Stock</th>
+
+		</tr>
+
+		<tr>
+
+			<td>{{product.id}}</td>
+
+			<td>{{product.name}}</td>
+
+			<td>{{product.quantityInStock}}</td>
+
+			<!-- <td><a routerLink="/products/{{product.id}}"><strong>Check latest purchases</strong></a></td> -->
+
+
+			<!-- <td (click)='deleteBuyer(i)'><strong>Remove</strong></td> -->
+
+
+		</tr>
+
+	</table>
+
+	<!-- <router-outlet></router-outlet> -->
+
+
+  </body>
+</html>

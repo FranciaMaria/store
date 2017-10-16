@@ -10,6 +10,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { BuyersService } from './services/buyers.service';
 import { Buyer } from './components/buyers/buyers';
 import { Product } from './components/products/products';
+import { ProductsService } from './services/products.service';
 
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -40,7 +41,7 @@ const appRoutes:Routes = [
   exports: [
     LayoutComponent
    ],
-  providers: [BuyersService],
+  providers: [BuyersService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
